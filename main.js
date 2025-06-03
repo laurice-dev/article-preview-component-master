@@ -1,8 +1,6 @@
-var button = document.querySelector(".card__share-button");
-var socialLinks = document.querySelector(".card__social-popup");
+var button = document.querySelector(".card__social-button");
+var socialLinks = document.querySelector(".card__social-popup--in-active");
 
 button.addEventListener("click", function () {
-  socialLinks.classList.toggle("active");
+  socialLinks.classList.toggle("card__social-popup--active");
 });
-
-// include if-else statement to remove in-active class
