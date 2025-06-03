@@ -1,10 +1,11 @@
 :root {
   /* colors */
-  --clr-primary-000: hsl(0, 0%, 100%);
   --clr-primary-900: hsl(217, 19%, 35%);
   --clr-primary-500: hsl(214, 17%, 51%);
   --clr-primary-400: hsl(212, 23%, 69%);
+  --clr-primary-300: hsl(210, 33%, 89%);
   --clr-primary-200: hsl(210, 46%, 95%);
+  --clr-primary-000: hsl(0, 0%, 100%);
 
   /* typography */
   --ff-manrope: "Manrope", sans-serif;
@@ -58,9 +59,12 @@ h1 {
 .card {
   display: flex;
   max-width: 45.625rem;
+  border-radius: 0.625rem 0 0 0.625rem;
+  box-shadow: 0 50px 50px var(--clr-primary-300);
 
   @media (max-width: 37.5em) {
     flex-direction: column;
+    border-radius: 0.625rem 0.625rem 0 0;
   }
 }
 
@@ -70,7 +74,8 @@ h1 {
 
 .card__image {
   border-radius: 0.625rem 0 0 0.625rem;
-  background: left / cover no-repeat url("/images/drawers.jpg");
+  background: url("/images/drawers.jpg") left / cover no-repeat;
+  background-color: transparent;
   min-height: 12.5rem;
 
   @media (max-width: 37.5em) {
@@ -146,6 +151,14 @@ h1 {
   }
 }
 
+.card__social-button--dark {
+  background: var(--clr-primary-500);
+
+  & img {
+    filter: brightness(0) invert(1);
+  }
+}
+
 .inverted-triangle {
   --width: 0.9375rem;
   position: absolute;
@@ -177,6 +190,7 @@ h1 {
 
   padding: 0.625rem;
   border-radius: 0.3125rem;
+  box-shadow: 0 10px 20px var(--clr-primary-300);
   background: var(--clr-primary-900);
 
   transition: 0.3s ease-in;
